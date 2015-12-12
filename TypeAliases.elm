@@ -4,7 +4,7 @@ module TypeAliases where
    alternative name for another type or record shape.
 
    We can see this in action in this example. It will compile perfectly,
-   and each output function will return a String. We may uses the
+   and each output function will return a String. We may use the
    symbols Ship and Person, but the compiler sees them both the same,
    as a record with a name field.
 -}
@@ -39,8 +39,8 @@ greet p
 launchShip = launch vessel
 greetPerson = greet captain
 
--- But these two functions also compile and execute okay. That's
--- because Ship and Person are not types, they're just aliases
+-- But these next two functions also compile and execute okay.
+-- That's because Ship and Person are not types, they're just aliases
 -- for a record with a name field.
 
 launchPerson = launch captain
