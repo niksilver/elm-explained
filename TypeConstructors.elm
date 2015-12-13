@@ -7,6 +7,8 @@ module TypeConstructors where
    a name, but we won't be able to substitute one for the other
    in a function which requires a specific one.
 
+   The symbols Ship and Person are also called tags - they are tagging
+   the String to indentify intended use.
 -}
 
 type Ship = Ship String
