@@ -66,7 +66,7 @@ greetPerson = greet captain
    
    The argument to function `launch` is causing a mismatch.
    
-   57³                launch captain
+   57|                launch captain
                              ^^^^^^^
                              Function `launch` is expecting the argument to be:
    
@@ -78,4 +78,27 @@ greetPerson = greet captain
    
    
    >
+-}
+
+-- We can of course also define a type with more than one argument.
+-- Here is how we define and use a number with a name
+
+type NamedInt = NamedInt String Int
+
+describe : NamedInt -> String
+describe ni
+  = case ni of
+      NamedInt name num -> "Number " ++ name ++ " looks like " ++ (toString num)
+
+n1 = NamedInt "one" 1
+n2 = NamedInt "two" 2
+n37 = NamedInt "thirty seven" 37
+
+{- We can used that like this on the Elm REPL:
+
+   > import TypeConstructors exposing (..)
+   > describe n37
+   "Number thirty seven looks like 37" : String
+   >
+
 -}
