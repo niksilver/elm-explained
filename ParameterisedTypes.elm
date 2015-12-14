@@ -48,7 +48,10 @@ type Car = Car String
 type AnimalPart = AnimalPart String
 type Unit = Lb | Kg
 
--- Now the main type definition, and how we use it.
+-- Now the main type definition. Notice that the unspecified thing being
+-- weighed (type a) has to have its type exposed on the left hand side of
+-- the equals sign. Then when we declare the type of a Weighed value
+-- we need to specify the thing's type, too (a Car or an AnimalPart).
 
 type Weighed a = Weighed a Float Unit
 
