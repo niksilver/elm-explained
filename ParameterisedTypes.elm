@@ -14,7 +14,7 @@ list2 = [ 10, 9, 8, 7 ]
 --
 -- This MiscHolder can hold any type of value. It's defined as an
 -- unknown type a, tagged with the MiscHolder label (its right hand side),
--- but when we use it we must use both the MiscHolder label and the
+-- but when we use it we must use both the MiscHolder tag and the
 -- specific type that's in use at the time.
 
 type MiscHolder a = MiscHolder a
@@ -37,30 +37,54 @@ listOfStringsInABox = MiscHolder ["Once", "upon", "a", "time"]
 
 -- Let's define a type for something that's been weighed. We need
 -- to capture the thing itself, the weight as a floating point number,
--- and the weighing units (lb or kg). When we use it in a type declaration
--- in future we need to specify its name and the type of thing that's been
--- weighed.
+-- and the weighing units (expressed as a String). When we use Weighed
+-- in a type declaration in future we need to use its name and
+-- the type of thing that's been weighed.
 
--- First, some type definitions to get us started. The Unit type defines
--- two values, Lb and Kg. See the Enumerations file for more on that.
+-- First, some type definitions to get us started.
 
 type Car = Car String
 type AnimalPart = AnimalPart String
-type Unit = Lb | Kg
 
--- Now the main type definition. Notice that the unspecified thing being
--- weighed (type a) has to have its type exposed on the left hand side of
--- the equals sign. Then when we declare the type of a Weighed value
--- we need to specify the thing's type, too (a Car or an AnimalPart).
+-- Now the main type definition.
 
-type Weighed a = Weighed a Float Unit
+type Weighed a = Weighed a Float String
+
+-- Notice that the unspecified thing being weighed (unspecified type a)
+-- has to have its type exposed on the left hand side of the equals
+-- sign. Then when we declare the type of a Weighed thing we need to
+-- specify the thing's type, too (a Car or an AnimalPart).
+
+-- Now let's see some simple use...
 
 volvo = Car "Volvo"
 feather = AnimalPart "Ostrich feather"
 
 volvoWeighed : Weighed Car
-volvoWeighed = Weighed volvo 2260 Kg
+volvoWeighed = Weighed volvo 2260 "kg"
 
 featherWeighed : Weighed AnimalPart
-featherWeighed = Weighed feather 0.001 Lb
+featherWeighed = Weighed feather 8.5 "g"
 
+-- We can do it without the interim values, too. But in this case
+-- have to use parentheses...
+
+volvoWeighed2 : Weighed Car
+volvoWeighed2 = Weighed (Car "Volvo") 2260 "kg"
+
+featherWeighed2 : Weighed AnimalPart
+featherWeighed2 = Weighed (AnimalPart "Ostrich feather") 8.5 "g"
+
+{- Here's how we might explore this with the Elm REPL:
+
+   > import ParameterisedTypes exposing (..)
+   > volvoWeighed
+   Weighed (Car "Volvo") 2260 "kg"
+       : ParameterisedTypes.Weighed ParameterisedTypes.Car
+   > volvoWeighed == volvoWeighed2
+   True : Bool
+   > featherWeighed == featherWeighed2
+   True : Bool
+   >
+
+-}
