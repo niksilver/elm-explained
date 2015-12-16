@@ -45,7 +45,6 @@ joker1 = Joker "Laughing Jeremy"
 
 {- Let's look at the values' types:
 
-
    > import UnionTypes exposing (..)
    > d10
    Diamond (Pips 10) : UnionTypes.Card
