@@ -31,3 +31,22 @@ z = Foo
    >
 
 -}
+
+-- We can have the type declaration different from the definition, oddly.
+-- What is the value of this?
+
+type Laurel = Hardy Int
+
+star1 : Laurel
+star1 = Hardy 100
+
+-- Perhaps it's a side effect of union types:
+
+type Groucho = Chico Int | Harpo Int
+
+star2 : Groucho
+star2 = Chico 37
+
+star3 : Groucho
+star3 = Harpo 38
+
