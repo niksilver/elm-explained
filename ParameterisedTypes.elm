@@ -1,5 +1,9 @@
 module ParameterisedTypes where
 
+-------------------------------------------------------------
+-- Lists are parameterised types
+-------------------------------------------------------------
+
 -- Here is a list of strings, and a list of ints.
 -- Notice their type declarations.
 
@@ -8,6 +12,10 @@ list1 = [ "Eenie", "Meenie", "Miney", "Mo" ]
 
 list2 : List Int
 list2 = [ 10, 9, 8, 7 ]
+
+-------------------------------------------------------------
+-- A simple example
+-------------------------------------------------------------
 
 -- When we declare a type, the left had side of the equals sign says
 -- how it's used; the right hand side says how it's defined.
@@ -28,12 +36,20 @@ stringInABox = MiscHolder "Greetings, Earthlings"
 floatInABox : MiscHolder Float
 floatInABox = MiscHolder 45.1
 
+-------------------------------------------------------------
+-- When to use parentheses
+-------------------------------------------------------------
+
 -- Since MiscHolder has only one additional type, when we use it to
 -- hold a List of Strings we have to put the "List String" in parentheses,
 -- otherwise the compiler will report an error.
 
 listOfStringsInABox : MiscHolder (List String)
 listOfStringsInABox = MiscHolder ["Once", "upon", "a", "time"]
+
+-------------------------------------------------------------
+-- A more involved example
+-------------------------------------------------------------
 
 -- Let's define a type for something that's been weighed. We need
 -- to capture the thing itself, the weight as a floating point number,

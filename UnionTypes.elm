@@ -1,5 +1,9 @@
 module UnionTypes where
 
+-------------------------------------------------------------
+-- Enumerations
+-------------------------------------------------------------
+
 -- A simple union type allows us to define an enumeration, like this
 
 type Direction = North | East | South | West
@@ -29,7 +33,13 @@ describe dir
 -- Note that the above won't compile if we miss out one of the suits,
 -- because the compiler expects an exhaustive match.
 
--- Union types also allow us to use more complex constructors:
+-------------------------------------------------------------
+-- More elaborate union types
+-------------------------------------------------------------
+
+-- Union types also allow us to use more complex constructors.
+-- The Character type is a simple enumeration, but
+-- the Card type is a mix of tagged Value and tagged String types.
 
 type Character = Ace | King | Queen | Jack
 type Value = Pips Int | Name Character

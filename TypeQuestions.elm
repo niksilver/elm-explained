@@ -1,5 +1,9 @@
 module TypeQuestions where
 
+-------------------------------------------------------------
+-- Oddity: Unused variables
+-------------------------------------------------------------
+
 -- What does it mean to define a type where the variable doesn't appear
 -- on the right hand side?
 -- We can see example of this for
@@ -31,6 +35,10 @@ z = Foo
    >
 
 -}
+
+-------------------------------------------------------------
+-- Oddity: Type name different from tag name
+-------------------------------------------------------------
 
 -- We can have the type declaration different from the definition, oddly.
 -- What is the value of this?
