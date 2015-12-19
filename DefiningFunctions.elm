@@ -72,7 +72,7 @@ concat = (\a b -> a ++ b)
 -}
 
 -------------------------------------------------------------
--- Type tags are functions, too.
+-- Type tags (constructors) are functions, too.
 -------------------------------------------------------------
 
 -- If we've defined a type with a tag then the tag (the constructor)
