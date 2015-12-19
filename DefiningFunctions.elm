@@ -95,3 +95,24 @@ box li =
    >
 
 -}
+
+-------------------------------------------------------------
+-- Record fields define functions
+-------------------------------------------------------------
+
+{- Any record is a function if you precede it immediately
+   with a "." (no whitespace). It is a function that takes
+   any type of record with that field, and returns the value
+   of that field. Here's what we can do on the Elm repl:
+
+   > .name
+   <function> : { b | name : a } -> a
+   > .age
+   <function> : { b | age : a } -> a
+   > .totallyUnlikelyMadeUpField
+   <function> : { b | totallyUnlikelyMadeUpField : a } -> a
+   >
+
+-}
+
+
