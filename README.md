@@ -9,3 +9,5 @@ Types:
 * [Union types](UnionTypes.elm)
 * [Outstanding questions about types](TypeQuestions.elm)
 
+Functions:
+* [Different ways of defining functions](DefiningFunctions.elm)
