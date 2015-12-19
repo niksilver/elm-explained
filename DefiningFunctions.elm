@@ -1,7 +1,7 @@
 module DefiningFunctions where
 
 import String exposing (length)
-import List exposing (filter)
+import List exposing (filter, map)
 
 -------------------------------------------------------------
 -- Named functions
@@ -27,7 +27,6 @@ isEvenLength s =
 -------------------------------------------------------------
 -- Anonymous functions
 -------------------------------------------------------------
-
 
 {- Before the next part, here's a reminder that the filter function
    filters through just those elements of a list that pass a specific
@@ -70,4 +69,29 @@ concat = (\a b -> a ++ b)
    "elmo" : String
    >
 
-->
+-}
+
+-------------------------------------------------------------
+-- Type tags are functions, too.
+-------------------------------------------------------------
+
+-- If we've defined a type with a tag then the tag (the constructor)
+-- is a function, too.
+--
+-- Here we use `map` to convert a list of Int values into a list
+-- of Boxed values.
+
+type Boxed = Boxed Int
+
+box : List Int -> List Boxed
+box li =
+    map Boxed li
+
+{- Here it is in use:
+
+   > import DefiningFunctions exposing (..)
+   > box [7, 6, 5, 4]
+   [Boxed 7,Boxed 6,Boxed 5,Boxed 4] : List DefiningFunctions.Boxed
+   >
+
+-}
