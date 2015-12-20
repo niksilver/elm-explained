@@ -7,6 +7,7 @@ Types:
 * [Type constructors](TypeConstructors.elm)
 * [Parameterised types](ParameterisedTypes.elm)
 * [Union types](UnionTypes.elm)
+* [Record types](RecordTypes.elm)
 * [Outstanding questions about types](TypeQuestions.elm)
 
 Functions:
