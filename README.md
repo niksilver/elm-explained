@@ -11,3 +11,5 @@ Types:
 
 Functions:
 * [Different ways of defining functions](DefiningFunctions.elm)
+* [Different ways of applying functions](ApplyingFunctions.elm)
+
