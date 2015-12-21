@@ -5,7 +5,7 @@ module RecordTypes where
 -------------------------------------------------------------
 
 -- The type of a record is just the description of its fields.
--- This says the of posA is a record with a field x that's a Float
+-- This says the type of posA is a record with a field x that's a Float
 -- and a field y that's a Float.
 
 posA : { x : Float, y : Float }
@@ -32,6 +32,6 @@ type Aged = Aged Int
 
 century = Aged 100
 
--- By the way, posA and posB are not the same type.
+-- By the way, posA and posB do not have the same type.
 -- posA is of type { x : Float, y : Float }
 -- posB is of type Positioned
