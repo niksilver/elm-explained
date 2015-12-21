@@ -1,6 +1,7 @@
-# Elm explanations
+# Elm explained
 
-Some demonstration code to explain various basic features of the Elm language.
+Some demonstration code and commentary
+to explain various fundamental features of the Elm language.
 
 Types:
 * [Type aliases](TypeAliases.elm)
