@@ -1,13 +1,10 @@
 module TypeAliases where
 
-{- A type alias doesn't define a type, it simply provides a convenient
-   alternative name for another type or record shape.
+-- A type alias doesn't define a type, it simply provides a convenient
+-- alternative name for another type or record shape.
 
-   We can see this in action in this example. It will compile perfectly,
-   and each output function will return a String. We may use the
-   symbols Ship and Person, but the compiler sees them both the same,
-   as a record with a name field.
--}
+-- We will define a Ship and a Person, but the compiler sees them
+-- as the same thing, which is a record with a name field.
 
 type alias Ship = { name : String }
 type alias Person = { name : String }
