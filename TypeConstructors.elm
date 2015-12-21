@@ -68,14 +68,13 @@ greetPerson = greet captain
    
    57|                launch captain
                              ^^^^^^^
-                             Function `launch` is expecting the argument to be:
+   Function `launch` is expecting the argument to be:
    
        Ship
    
    But it is:
    
        Person
-   
    
    >
 -}
