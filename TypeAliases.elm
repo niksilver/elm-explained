@@ -45,14 +45,14 @@ greetShip = greet vessel
 
 {- We can execute this in the Elm REPL to check
 
-   > import TypeAliases
-   > TypeAliases.launchShip
+   > import TypeAliases exposing (..)
+   > launchShip
    "I name this ship HMS Splendid" : String
-   > TypeAliases.greetPerson
+   > greetPerson
    "Hello there, Captain Robert Q. Peabody" : String
-   > TypeAliases.launchPerson
+   > launchPerson
    "I name this ship Captain Robert Q. Peabody" : String
-   > TypeAliases.greetShip
+   > greetShip
    "Hello there, HMS Splendid" : String
    >
    
