@@ -8,6 +8,7 @@ Types:
 * [Parameterised types](ParameterisedTypes.elm)
 * [Union types](UnionTypes.elm)
 * [Record types](RecordTypes.elm)
+* [Extensible record types](ExtensibleRecordTypes.elm)
 * [Outstanding questions about types](TypeQuestions.elm)
 
 Functions:
