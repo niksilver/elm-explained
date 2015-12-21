@@ -33,7 +33,7 @@ ixy = { x = 10.1, y = 11.1, z = 12.1 }
 -- it's the z part of the record.
 
 -- Now we define two functions which take a JustXY and an IncXY.
--- The sumInC function will accept both values,
+-- The sumInc function will accept both values,
 -- but the sumJust function will only take the JustXY value.
 
 sumJust : JustXY -> Float
