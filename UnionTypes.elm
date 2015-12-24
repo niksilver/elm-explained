@@ -33,6 +33,7 @@ describe dir
 -- Note that the above won't compile if we miss out one of the suits,
 -- because the compiler expects an exhaustive match.
 
+
 -------------------------------------------------------------
 -- More elaborate union types
 -------------------------------------------------------------
@@ -65,4 +66,20 @@ joker1 = Joker "Laughing Jeremy"
    >
 
 -}
+
+
+-------------------------------------------------------------
+-- Union types must create new tags
+-------------------------------------------------------------
+
+-- For a union type to be valid, all the types in the union
+-- must be creating a new type. So we can't do (say)
+--
+-- type Counter = Int | { name : String, c : Int}
+--
+-- But we can do this, because we're introducing new tags
+
+type Counter = AnonCounter Int | NamedCounter { name : String, c : Int }
+
+-- See also https://gist.github.com/evancz/06fe634245a3aab4a61b
 
