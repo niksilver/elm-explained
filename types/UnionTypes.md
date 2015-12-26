@@ -8,7 +8,7 @@ A simple union type allows us to define an enumeration, like this
 type Direction = North | East | South | West
 ```
 
-In the above example we've defined the type `Suit`, but we've also
+In the above example we've defined the type `Direction`, but we've also
 created and defined the values `North`, `East`, `South` and `West`.
 If we put this code into
 [UnionTypes.elm](UnionTypes.elm)
@@ -35,7 +35,7 @@ describe dir
         West -> "Humid"
 ```
 
-Note that the above won't compile if we miss out one of the suits,
+Note that the code above won't compile if we miss out one of the directions,
 because the compiler expects an exhaustive match.
 
 

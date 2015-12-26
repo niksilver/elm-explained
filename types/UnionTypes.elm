@@ -1,7 +1,7 @@
 module UnionTypes where
 
--- Enumerations
 
+-- Enumerations
 
 type Direction = North | East | South | West
 
