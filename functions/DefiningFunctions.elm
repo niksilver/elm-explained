@@ -34,8 +34,9 @@ box li =
 
 -- This next line defines a type called `Point`, and its associated
 -- tag/constructor (also called `Point`). But that tag is also
--- a function from the plain record to a `Point`, which we can
--- see with the `map` function.
+-- a function from the plain record to a `Point`.
+-- This is exactly the same idea as with simple type tags
+-- We can see this with the `map` function.
 
 type Point = Point { x : Float, y : Float }
 
@@ -89,23 +90,23 @@ so `DefiningFunctions.Person` is just the fully qualified name of
 
 -- Here we define a value using the `Person` function:
 
-bob : Person
+bob : { name : String, age : Int }
 bob = Person "Robert" 55
 
 -- And here we use the `Person` function to bring a list of names
 -- and a list of ages together:
 
-people : List Person
+people : List { name : String, age : Int }
 people =
     map2 Person ["Alice", "Brian", "Coco"] [61, 23, 35]
 
 {- Let's see what that looks like in the REPL:
 > import DefiningFunctions exposing (..)
 > bob
-{ name = "Robert", age = 55 } : DefiningFunctions.Person
+{ name = "Robert", age = 55 } : { age : Int, name : String }
 > people
 [{ name = "Alice", age = 61 },{ name = "Brian", age = 23 },{ name = "Coco", age = 35 }]
-: List DefiningFunctions.Person
+: List { age : Int, name : String }
 >
 -}
 
