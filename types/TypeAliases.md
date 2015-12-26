@@ -54,7 +54,7 @@ greetShip = greet vessel
 ```
 
 We can copy all the code above into
-an Elm module called TypeAliases.elm.
+[an Elm module called TypeAliases.elm](TypeAliases.elm).
 And then here's what it looks like when we use the functions in the REPL:
 
 ```

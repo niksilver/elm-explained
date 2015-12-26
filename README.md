@@ -4,7 +4,7 @@ Some demonstration code and commentary
 to explain various fundamental features of the Elm language.
 
 Types:
-* [Type aliases](types/TypeAliases.elm)
+* [Type aliases](types/TypeAliases.md)
 * [Type constructors](TypeConstructors.elm)
 * [Parameterised types](ParameterisedTypes.elm)
 * [Union types](UnionTypes.elm)
