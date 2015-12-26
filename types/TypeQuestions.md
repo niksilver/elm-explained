@@ -1,14 +1,14 @@
 # Type questions
 
-# Oddity: Unused variables
+## Oddity: Unused variables
 
 What does it mean to define a type where the variable doesn't appear
 on the right hand side?
 We can see an example of this for
 `Array` in
-[the source of the Array module](https://github.com/elm-lang/core/blob/3.0.0/src/Array.elm)
+[the source of the Array module](https://github.com/elm-lang/core/blob/3.0.0/src/Array.elm#L39)
 and for `Signal` in
-[the source for the Signal module](https://github.com/elm-lang/core/blob/3.0.0/src/Signal.elm).
+[the source for the Signal module](https://github.com/elm-lang/core/blob/3.0.0/src/Signal.elm#L59).
 
 ```elm
 type Foo a = Foo
@@ -45,7 +45,8 @@ Foo : TypeQuestions.Foo a
 
 ## Oddity: Type name different from tag name
 
-We can have the type declaration different from the definition, oddly.
+We can have the type declaration (the tag)
+different from the definition, oddly.
 What is the value of this?
 
 ```elm
