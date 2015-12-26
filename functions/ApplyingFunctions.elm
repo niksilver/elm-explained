@@ -13,14 +13,14 @@ isEven x =
     )
 
 
--- "Applied to..." using `<|`
+-- "Applied to..."
 
 res1 = increment <| 17    -- res1 is 18
 
 res2 = concat4 "Once" "Upon" "A" <| "Time"
 
 
--- "Applying..." using `|>`
+-- "Applying..."
 
 res3 = 17 |> increment    -- res3 is also 18
 

@@ -17,7 +17,7 @@ isEven x =
     )
 ```
 
-## "Applied to..." using `<|`
+## "Applied to..."
 
 The `<|` operator can be read as "applied to...".
 We can read the code here as "increment applied to 17":
@@ -33,7 +33,7 @@ effectively appended at the end. So `res2` is "OnceUponATime"
 res2 = concat4 "Once" "Upon" "A" <| "Time"
 ```
 
-## "Applying..." using `|>`
+## "Applying..."
 
 The `|>` operator can be read as "applying...".
 We can read the code below as "17 applying increment".
@@ -60,7 +60,7 @@ fun5 : Float -> Bool
 fun5 = not << isEven << sqrt
 ```
 
-Now `fun5` is a function that does not(isEvent(sqrt(..)))
+Now `fun5` is a function that does `not(isEven(sqrt(...)))`.
 
 ```elm
 res6 = fun5 81    -- True, because the square root of 81 is indeed not even
