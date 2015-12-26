@@ -53,7 +53,9 @@ launchPerson = launch captain
 greetShip = greet vessel
 ```
 
-Here's what it looks like when we use the functions in the REPL:
+We can copy all the code above into
+an Elm module called TypeAliases.elm.
+And then here's what it looks like when we use the functions in the REPL:
 
 ```
 > import TypeAliases exposing (..)
