@@ -11,7 +11,7 @@ Types:
 * [Parameterised types](types/ParameterisedTypes.md)
 * [Union types](types/UnionTypes.md)
 * [Record types](types/RecordTypes.md)
-* [Extensible record types](ExtensibleRecordTypes.elm)
+* [Extensible record types](types/ExtensibleRecordTypes.md)
 * [Outstanding questions about types](TypeQuestions.elm)
 
 Functions:
