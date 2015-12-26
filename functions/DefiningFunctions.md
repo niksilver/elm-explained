@@ -190,7 +190,7 @@ Let's see what that looks like in the REPL:
 >
 ```
 
-## Record fields names define functions
+## Record field names define functions
 
 Any field name is a function if you precede it immediately
 with a dot (no whitespace). It is a function that takes
