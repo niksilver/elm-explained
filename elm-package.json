@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "Demo code to explain basic features of the Elm language",
-    "repository": "https://github.com/niksilver/project.git",
+    "repository": "https://github.com/niksilver/elm-explained",
     "license": "BSD3",
     "source-directories": [
         "."
