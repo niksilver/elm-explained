@@ -110,7 +110,7 @@ n37 = NamedInt "thirty seven" 37
 ```
 
 If we add that code to our module
-we can used that like this in the Elm REPL:
+we can use it like this in the Elm REPL:
 
 ```
 > import TypeConstructors exposing (..)
