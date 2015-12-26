@@ -2,10 +2,12 @@
 
 Some demonstration code and commentary
 to explain various fundamental features of the Elm language.
+The idea is mainly just to be able to read and understand Elm code,
+not so much how to use it well.
 
 Types:
 * [Type aliases](types/TypeAliases.md)
-* [Type constructors](TypeConstructors.elm)
+* [Type constructors](types/TypeConstructors.elm)
 * [Parameterised types](ParameterisedTypes.elm)
 * [Union types](UnionTypes.elm)
 * [Record types](RecordTypes.elm)
