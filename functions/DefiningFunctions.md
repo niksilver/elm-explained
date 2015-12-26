@@ -46,7 +46,7 @@ ones li =
     filter (\s -> length s == 1) li
 ```
 
-Here's the ones function in use:
+Here's the `ones` function in use:
 
 ```
 > import DefiningFunctions exposing (..)
@@ -77,7 +77,7 @@ If we've defined a type with a tag then the tag (the constructor)
 is a function, too.
 
 Here we use `map` to convert a list of Int values into a list
-of Boxed values.
+of `Boxed` values.
 
 ```elm
 type Boxed = Boxed Int
@@ -101,7 +101,7 @@ so `DefiningFunctions.Boxed` is just the fully qualified name of
 
 ## Type tags for records are also functions
 
-Next we define a type called `Point`, and its associated
+Next we define a type for a record called `Point`, and its associated
 tag/constructor (also called `Point`). But that tag is also
 a function from the plain record to a `Point`.
 This is exactly the same idea as with simple type tags.
