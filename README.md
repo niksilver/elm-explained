@@ -15,6 +15,6 @@ Types:
 * [Outstanding questions about types](types/TypeQuestions.md)
 
 Functions:
-* [Different ways of defining functions](DefiningFunctions.elm)
+* [Various ways of defining functions](functions/DefiningFunctions.md)
 * [Different ways of applying functions](ApplyingFunctions.elm)
 
