@@ -16,5 +16,5 @@ Types:
 
 Functions:
 * [Various ways of defining functions](functions/DefiningFunctions.md)
-* [Different ways of applying functions](ApplyingFunctions.elm)
+* [Ways of applying functions](functions/ApplyingFunctions.md)
 
