@@ -87,7 +87,11 @@ box li =
     map Boxed li
 ```
 
-Here it is in use:
+Here it is in use.
+Remember that `DefiningFunctions` is just the name of our module,
+so `DefiningFunctions.Boxed` is just the fully qualified name of
+`Boxed`:
+
 ```
 > import DefiningFunctions exposing (..)
 > box [7, 6, 5, 4]
@@ -97,11 +101,11 @@ Here it is in use:
 
 ## Type tags for records are also functions
 
-This next line defines a type called `Point`, and its associated
+Next we define a type called `Point`, and its associated
 tag/constructor (also called `Point`). But that tag is also
 a function from the plain record to a `Point`.
 This is exactly the same idea as with simple type tags.
-We can see this with the `map` function.
+We can see this when we use it with the `map` function.
 
 ```elm
 type Point = Point { x : Float, y : Float }
@@ -148,10 +152,7 @@ one for each field, and it will return a record with those fields.
 This means we need to know the order in which we originally defined
 the fields.
 
-Let's look at it in the REPL.
-Remember that `DefiningFunctions` is just the name of our module,
-so `DefiningFunctions.Person` is just the fully qualified name of
-`Person`:
+If we look at it in the REPL we see that `Person` is indeed a function:
 
 ```
 > import DefiningFunctions exposing (..)
@@ -160,10 +161,11 @@ so `DefiningFunctions.Person` is just the fully qualified name of
 >
 ```
 
-Now let's define a value using the `Person` function:
+Now let's define a value using the `Person` function, passing in two
+arguments:
 
 ```elm
-bob : Person
+bob : { name : String, age : Int }
 bob = Person "Robert" 55
 ```
 
@@ -171,7 +173,7 @@ And here we use the `Person` function to bring a list of names
 and a list of ages together:
 
 ```elm
-people : List Person
+people : List { name : String, age : Int }
 people =
     map2 Person ["Alice", "Brian", "Coco"] [61, 23, 35]
 ```
@@ -181,19 +183,19 @@ Let's see what that looks like in the REPL:
 ```
 > import DefiningFunctions exposing (..)
 > bob
-{ name = "Robert", age = 55 } : DefiningFunctions.Person
+{ name = "Robert", age = 55 } : { age : Int, name : String }
 > people
 [{ name = "Alice", age = 61 },{ name = "Brian", age = 23 },{ name = "Coco", age = 35 }]
-: List DefiningFunctions.Person
+: List { age : Int, name : String }
 >
 ```
 
-## Record fields define functions
+## Record fields names define functions
 
-Any record is a function if you precede it immediately
+Any field name is a function if you precede it immediately
 with a dot (no whitespace). It is a function that takes
 any type of record with that field, and returns the value
-of that field. Here's what we can do on the Elm REPL:
+of that field. Here's what we can do in the Elm REPL:
 
 ```
 > .name
