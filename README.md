@@ -10,7 +10,7 @@ Types:
 * [Type constructors](types/TypeConstructors.md)
 * [Parameterised types](types/ParameterisedTypes.md)
 * [Union types](types/UnionTypes.md)
-* [Record types](RecordTypes.elm)
+* [Record types](types/RecordTypes.md)
 * [Extensible record types](ExtensibleRecordTypes.elm)
 * [Outstanding questions about types](TypeQuestions.elm)
 
