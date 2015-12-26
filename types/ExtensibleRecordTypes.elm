@@ -6,6 +6,9 @@ type alias JustXY  =     { x : Float, y : Float }
 
 type alias IncXY a = { a | x : Float, y : Float }
 
+
+-- Defining values with extensible record types
+
 jxy : JustXY
 jxy = { x = 1.1, y = 2.1 }
 

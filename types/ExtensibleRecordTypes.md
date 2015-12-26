@@ -21,6 +21,8 @@ Float". See
 [our notes on parameterised types](ParameterisedTypes.md)
 elsewhere.
 
+## Defining values with extensible record types
+
 Here we define a value of type `JustXY` and one of type `IncXY`.
 
 ```elm
@@ -78,6 +80,4 @@ then this is what it looks like in the Elm REPL:
 > res4
 3.2 : Float
 >
-
-If we uncomment the `res2` line above and try to import the module
-we'll get a compilation error.
+```
