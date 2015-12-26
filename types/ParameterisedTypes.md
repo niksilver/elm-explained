@@ -18,8 +18,8 @@ list2 = [ 10, 9, 8, 7 ]
 When we declare a type, the left had side of the equals sign says
 how it's used; the right hand side says how it's defined.
 
-This `MiscHolder` can hold any type of value. It's defined as an
-unknown type `a`, tagged with the `MiscHolder` tag (its right hand side),
+The following `MiscHolder` can hold any type of value. It's defined as an
+unknown type `a` tagged with the `MiscHolder` tag (its right hand side),
 but when we use it we must use both the `MiscHolder` tag and the
 specific type that's in use at the time.
 
@@ -70,9 +70,9 @@ Now the main type definition.
 type Weighed a = Weighed a Float String
 ```
 
-Notice that the unspecified thing being weighed (unspecified type `a`)
+Notice that the thing being weighed (which has unspecified type `a`)
 has to have its type exposed on the left hand side of the equals
-sign. Then when we declare the type of a Weighed thing we need to
+sign. Then when we declare the type of a `Weighed` thing we need to
 specify the thing's type, too (a `Car` or an `AnimalPart`).
 
 Now let's see some simple use...
@@ -88,7 +88,7 @@ featherWeighed : Weighed AnimalPart
 featherWeighed = Weighed feather 8.5 "g"
 ```
 
-We can do it without the interim values, too. But in this case
+We can do it without the interim values, too, but if so we
 have to use parentheses...
 
 ```elm
@@ -101,9 +101,9 @@ featherWeighed2 = Weighed (AnimalPart "Ostrich feather") 8.5 "g"
 
 If we were to put the code above into
 [an Elm module called ParameterisedTypes](ParameterisedTypes.elm)
-the here's how we might explore it with the Elm REPL:
+then here's how we might explore it in the Elm REPL:
 
-```elm
+```
 > import ParameterisedTypes exposing (..)
 > volvoWeighed
 Weighed (Car "Volvo") 2260 "kg"
