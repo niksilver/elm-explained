@@ -36,8 +36,8 @@ type NamedInt = NamedInt String Int
 
 describe : NamedInt -> String
 describe ni
-  = case ni of
-      NamedInt name num -> "Number " ++ name ++ " looks like " ++ (toString num)
+    = case ni of
+        NamedInt name num -> "Number " ++ name ++ " looks like " ++ (toString num)
 
 n1 = NamedInt "one" 1
 n2 = NamedInt "two" 2

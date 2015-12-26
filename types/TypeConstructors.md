@@ -7,17 +7,16 @@ In this example we'll define a Ship and a Person, which both have
 a name, but we won't be able to substitute one for the other
 in a function which requires a specific one.
 
-The symbols Ship and Person are also called tags - they are tagging
-the String to indentify intended use.
-
-Here are our type definitions:
-
 ```elm
 type Ship = Ship String
 type Person = Person String
 ```
 
-We'll create a Ship and a Person, and they will be of distinct types:
+The symbols Ship and Person are also called tags - they are tagging
+the String to indentify intended use.
+
+Next we'll create a specific Ship and Person.
+They will therefore be of distinct types:
 
 ```elm
 vessel : Ship
