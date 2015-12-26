@@ -8,7 +8,7 @@ not so much how to use it well.
 Types:
 * [Type aliases](types/TypeAliases.md)
 * [Type constructors](types/TypeConstructors.md)
-* [Parameterised types](ParameterisedTypes.elm)
+* [Parameterised types](types/ParameterisedTypes.md)
 * [Union types](UnionTypes.elm)
 * [Record types](RecordTypes.elm)
 * [Extensible record types](ExtensibleRecordTypes.elm)
