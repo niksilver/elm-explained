@@ -12,7 +12,7 @@ Types:
 * [Union types](types/UnionTypes.md)
 * [Record types](types/RecordTypes.md)
 * [Extensible record types](types/ExtensibleRecordTypes.md)
-* [Outstanding questions about types](TypeQuestions.elm)
+* [Outstanding questions about types](types/TypeQuestions.md)
 
 Functions:
 * [Different ways of defining functions](DefiningFunctions.elm)
