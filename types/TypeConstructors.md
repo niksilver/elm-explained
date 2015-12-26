@@ -91,6 +91,8 @@ But it is:
 >
 ```
 
+## Example with more than one argument
+
 We can of course also define a type with more than one argument.
 Here is how we define and use a number with a name
 
