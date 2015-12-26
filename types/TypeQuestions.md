@@ -6,9 +6,9 @@ What does it mean to define a type where the variable doesn't appear
 on the right hand side?
 We can see an example of this for
 `Array` in
-[the source of the Array module](https://github.com/elm-lang/core/blob/3.0.0/src/Array.elm#L39)
+[the source of the Array module](https://github.com/elm-lang/core/blob/3.0.0/src/Array.elm#L43)
 and for `Signal` in
-[the source for the Signal module](https://github.com/elm-lang/core/blob/3.0.0/src/Signal.elm#L59).
+[the source for the Signal module](https://github.com/elm-lang/core/blob/3.0.0/src/Signal.elm#L64).
 
 ```elm
 type Foo a = Foo
