@@ -1,19 +1,7 @@
-module TypeQuestions where
-
--- Oddity: Unused variables
-
-type Foo a = Foo
-
-x : Foo Int
-x = Foo
-
-y : Foo b
-y = Foo
-
-z = Foo
+module TypeOddities where
 
 
--- Oddity: Type name different from tag name
+-- Type name different from tag name
 
 type Laurel = Hardy Int
 
