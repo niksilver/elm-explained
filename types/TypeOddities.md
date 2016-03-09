@@ -9,7 +9,7 @@ variable that doesn't appear on the right hand side, like this:
 type Foo a = Foo
 ```
 
-Examples are in
+Examples are in the source
 for the type `Array` in
 [the source of the Array module](https://github.com/elm-lang/core/blob/3.0.0/src/Array.elm#L43)
 and for `Signal` in
