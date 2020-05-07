@@ -2,7 +2,7 @@
 
 ## Named functions
 
-We can define a function simply by naming it:
+We can define a function simply by naming it with its parameters:
 
 ```elm
 isEvenLength: String -> Bool
