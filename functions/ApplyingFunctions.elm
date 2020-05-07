@@ -1,30 +1,32 @@
-module ApplyingFunctions where
+module ApplyingFunctions exposing (..)
 
 increment a =
-    a + 1
+  a + 1
 
 concat4 a b c d =
-    a ++ b ++ c ++ d
+  a ++ b ++ c ++ d
 
 isEven : Float -> Bool
 isEven x =
-    (toFloat (round x) == x
-        && round x % 2 == 0
-    )
+  (toFloat (round x) == x
+    && modBy 2 (round x) == 0
+  )
 
 
 -- "Applied to..."
 
 res1 = increment <| 17    -- res1 is 18
 
-res2 = concat4 "Once" "Upon" "A" <| "Time"
+res2a = concat4 "Pass" "w" "ord" <| String.fromInt 123
+
+res2b = concat4 "Pass" "w" "ord" (String.fromInt 123)
 
 
 -- "Applying..."
 
 res3 = 17 |> increment    -- res3 is also 18
 
-res4 = "Time" |> concat4 "Once" "Upon" "A"
+res4 = String.fromInt 123 |> concat4 "Pass" "w" "ord"
 
 
 -- Composition with "composed with..."

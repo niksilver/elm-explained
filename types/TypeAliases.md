@@ -28,12 +28,12 @@ a name field.
 
 ```elm
 launch : Ship -> String
-launch s
-  = "I name this ship " ++ s.name
+launch s =
+  "I name this ship " ++ s.name
 
 greet : Person -> String
-greet p
-  = "Hello there, " ++ p.name
+greet p =
+  "Hello there, " ++ p.name
 ```
 
 Here we launch a ship and greet a person. As you'd expect, both

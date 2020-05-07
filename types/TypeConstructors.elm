@@ -1,4 +1,4 @@
-module TypeConstructors where
+module TypeConstructors exposing (..)
 
 type Ship = Ship String
 type Person = Person String
@@ -10,14 +10,14 @@ captain : Person
 captain = Person "Captain Robert Q. Peabody"
 
 launch : Ship -> String
-launch s
-  = case s of
-          Ship name -> "I name this ship " ++ name
+launch s =
+  case s of
+    Ship name -> "I name this ship " ++ name
 
 greet : Person -> String
-greet p
-  = case p of
-          Person name -> "Hello there, " ++ name
+greet p =
+  case p of
+    Person name -> "Hello there, " ++ name
 
 launchShip = launch vessel
 greetPerson = greet captain
@@ -35,9 +35,9 @@ greetPerson = greet captain
 type NamedInt = NamedInt String Int
 
 describe : NamedInt -> String
-describe ni
-    = case ni of
-        NamedInt name num -> "Number " ++ name ++ " looks like " ++ (toString num)
+describe ni =
+  case ni of
+    NamedInt name num -> "Number " ++ name ++ " looks like " ++ (String.fromInt num)
 
 n1 = NamedInt "one" 1
 n2 = NamedInt "two" 2

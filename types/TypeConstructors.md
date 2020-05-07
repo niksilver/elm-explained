@@ -31,14 +31,14 @@ To extract the data embedded in the type we use pattern matching.
 
 ```elm
 launch : Ship -> String
-launch s
-    = case s of
-        Ship name -> "I name this ship " ++ name
+launch s =
+  case s of
+    Ship name -> "I name this ship " ++ name
 
 greet : Person -> String
-greet p
-    = case p of
-        Person name -> "Hello there, " ++ name
+greet p =
+  case p of
+    Person name -> "Hello there, " ++ name
 ```
 
 Here we launch a ship and greet a person. As you'd expect, both
@@ -73,20 +73,20 @@ Here's what it looks like in the REPL if we try to add it into
 our module and then import that module:
 
 ```
-> import TypeConstructors exposing (..)
--- TYPE MISMATCH --------------------------------- .\.\TypeConstructors.elm
+> launchPerson = launch captain
+-- TYPE MISMATCH ---------------------------------------------------------- REPL
 
-The argument to function `launch` is causing a mismatch.
+The 1st argument to `launch` is not what I expect:
 
-57|                launch captain
-                          ^^^^^^^
-Function `launch` is expecting the argument to be:
-
-    Ship
-
-But it is:
+3| launchPerson = launch captain
+                         ^^^^^^^
+This `captain` value is a:
 
     Person
+
+But `launch` needs the 1st argument to be:
+
+    Ship
 
 >
 ```
@@ -100,9 +100,9 @@ Here is how we define and use a number with a name
 type NamedInt = NamedInt String Int
 
 describe : NamedInt -> String
-describe ni
-  = case ni of
-      NamedInt name num -> "Number " ++ name ++ " looks like " ++ (toString num)
+describe ni =
+  case ni of
+    NamedInt name num -> "Number " ++ name ++ " looks like " ++ (String.fromInt num)
 
 n1 = NamedInt "one" 1
 n2 = NamedInt "two" 2

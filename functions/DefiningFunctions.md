@@ -7,11 +7,12 @@ We can define a function simply by naming it:
 ```elm
 isEvenLength: String -> Bool
 isEvenLength s =
-    (length s % 2 == 0)
+  modBy 2 (length s) == 0
 ```
 
 Here it is in use, assuming we put the code in
-[a module called DefiningFunctions](DefiningFunctions.elm):
+[a module called DefiningFunctions](DefiningFunctions.elm) and import
+the length function:
 
 ```
 > import DefiningFunctions exposing (..)
@@ -43,7 +44,7 @@ It's usual not to have a space after the backslash, but we can.
 ```elm
 ones: List String -> List String
 ones li =
-    filter (\s -> length s == 1) li
+  filter (\s -> length s == 1) li
 ```
 
 Here's the `ones` function in use:
@@ -88,14 +89,12 @@ box li =
 ```
 
 Here it is in use.
-Remember that `DefiningFunctions` is just the name of our module,
-so `DefiningFunctions.Boxed` is just the fully qualified name of
-`Boxed`:
 
 ```
-> import DefiningFunctions exposing (..)
+import DefiningFunctions exposing (..)
 > box [7, 6, 5, 4]
-[Boxed 7,Boxed 6,Boxed 5,Boxed 4] : List DefiningFunctions.Boxed
+[Boxed 7,Boxed 6,Boxed 5,Boxed 4]
+    : List Boxed
 >
 ```
 
@@ -112,14 +111,14 @@ type Point = Point { x : Float, y : Float }
 
 triangle1 : List { x : Float, y : Float }
 triangle1 =
-    [ { x = 0, y = 0 }
-    , { x = 8, y = 1 }
-    , { x = 5, y = 7 }
-    ]
+  [ { x = 0, y = 0 }
+  , { x = 8, y = 1 }
+  , { x = 5, y = 7 }
+  ]
 
 triangle2 : List Point
 triangle2 =
-    map Point triangle1
+  map Point triangle1
 ```
 
 Here's how it looks in the REPL. Notice that we've converted
@@ -133,7 +132,7 @@ to the `Point` function.
     : List { x : Float, y : Float }
 > triangle2
 [Point { x = 0, y = 0 },Point { x = 8, y = 1 },Point { x = 5, y = 7 }]
-    : List DefiningFunctions.Point
+    : List Point
 >
 ```
 
@@ -147,7 +146,7 @@ a type alias...
 type alias Person = { name : String, age : Int }
 ```
 
-Now the `Person` function is one that takes several arguments,
+This gives us a `Person` function that takes several arguments,
 one for each field, and it will return a record with those fields.
 This means we need to know the order in which we originally defined
 the fields.
@@ -157,7 +156,7 @@ If we look at it in the REPL we see that `Person` is indeed a function:
 ```
 > import DefiningFunctions exposing (..)
 > Person
-<function> : String -> Int -> DefiningFunctions.Person
+<function> : String -> Int -> Person
 >
 ```
 
@@ -175,7 +174,7 @@ and a list of ages together:
 ```elm
 people : List { name : String, age : Int }
 people =
-    map2 Person ["Alice", "Brian", "Coco"] [61, 23, 35]
+  map2 Person ["Alice", "Brian", "Coco"] [61, 23, 35]
 ```
 
 Let's see what that looks like in the REPL:
@@ -183,10 +182,11 @@ Let's see what that looks like in the REPL:
 ```
 > import DefiningFunctions exposing (..)
 > bob
-{ name = "Robert", age = 55 } : { age : Int, name : String }
+{ age = 55, name = "Robert" }
+    : { age : Int, name : String }
 > people
-[{ name = "Alice", age = 61 },{ name = "Brian", age = 23 },{ name = "Coco", age = 35 }]
-: List { age : Int, name : String }
+[{ age = 61, name = "Alice" },{ age = 23, name = "Brian" },{ age = 35, name = "Coco" }]
+    : List { age : Int, name : String }
 >
 ```
 

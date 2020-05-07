@@ -1,4 +1,4 @@
-module ExtensibleRecordTypes where
+module ExtensibleRecordTypes exposing (..)
 
 -- Defining extensible records
 

@@ -1,20 +1,20 @@
 # Applying functions
 
 First, some functions that will be useful to us. (These can be found in
-[module ApplyingFunctions](ApplyingFunctions.elm).)
+[the module ApplyingFunctions](ApplyingFunctions.elm).)
 
 ```elm
 increment a =
-    a + 1
+  a + 1
 
 concat4 a b c d =
-    a ++ b ++ c ++ d
+  a ++ b ++ c ++ d
 
 isEven : Float -> Bool
 isEven x =
-    (toFloat (round x) == x
-        && round x % 2 == 0
-    )
+  (toFloat (round x) == x
+    && modBy 2 (round x) == 0
+  )
 ```
 
 ## "Applied to..."
@@ -27,26 +27,34 @@ res1 = increment <| 17    -- res1 is 18
 ```
 
 Since spaces bind tightest of all, the right hand argument of `<|` is
-effectively appended at the end. So `res2` is "OnceUponATime"
+effectively appended at the end. So here, `res2a` is "Password123"
 
 ```elm
-res2 = concat4 "Once" "Upon" "A" <| "Time"
+res2a = concat4 "Pass" "w" "ord" <| String.fromInt 123
 ```
 
-## "Applying..."
+This is often useful for avoiding parentheses and making the code easier
+to read. The above code is equivalen to
 
-The `|>` operator can be read as "applying...".
-We can read the code below as "17 applying increment".
+```elm
+res2b = concat4 "Pass" "w" "ord" (String.fromInt 123)
+```
+
+## "Piped into..."
+
+The `|>` operator is also called the "pipe" operator and can be read
+"piped into...".
+We can read the code below as "17 piped into increment".
 
 ```elm
 res3 = 17 |> increment    -- res3 is also 18
 ```
 
 Again, as spaces bind tightest of all the left hand argument of `|>` is
-effectively appended at the end. So `res4` is also "OnceUponATime"
+effectively appended at the end. So `res4` is also "Password123"
 
 ```elm
-res4 = "Time" |> concat4 "Once" "Upon" "A"
+res4 = String.fromInt 123 |> concat4 "Pass" "w" "ord"
 ```
 
 ## Composition with "composed with..."
@@ -70,9 +78,10 @@ res7 = fun5 64    -- False, because the square root of 64 is even
 ## Composition with "and then..."
 
 The `>>` operator can be read "and then...".
-It composes functions left to right. It looks intuitive but
+It composes functions left to right. It looks intuitive, although it
 probably doesn't read so well.
-This next function does the same as the one above.
+This next function does the same as the one above. We can
+read it as "`sqrt`, and then `isEven`, and then `not`".
 
 ```elm
 fun8 : Float -> Bool

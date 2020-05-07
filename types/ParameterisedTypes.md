@@ -15,7 +15,7 @@ list2 = [ 10, 9, 8, 7 ]
 
 ## A simple example
 
-When we declare a type, the left had side of the equals sign says
+When we declare a type, the left hand side of the equals sign says
 how it's used; the right hand side says how it's defined.
 
 The following `MiscHolder` can hold any type of value. It's defined as an
@@ -107,7 +107,16 @@ then here's how we might explore it in the Elm REPL:
 > import ParameterisedTypes exposing (..)
 > volvoWeighed
 Weighed (Car "Volvo") 2260 "kg"
-    : ParameterisedTypes.Weighed ParameterisedTypes.Car
+    : Weighed Car
+> volvoWeighed = volvoWeighed2
+Weighed (Car "Volvo") 2260 "kg"
+    : Weighed Car
+>
+>
+> import ParameterisedTypes exposing (..)
+> volvoWeighed
+Weighed (Car "Volvo") 2260 "kg"
+    : Weighed Car
 > volvoWeighed == volvoWeighed2
 True : Bool
 > featherWeighed == featherWeighed2

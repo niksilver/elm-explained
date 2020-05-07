@@ -1,4 +1,4 @@
-module DefiningFunctions where
+module DefiningFunctions exposing (..)
 
 import String exposing (length)
 import List exposing (filter, map, map2)
@@ -8,14 +8,14 @@ import List exposing (filter, map, map2)
 
 isEvenLength: String -> Bool
 isEvenLength s =
-    (length s % 2 == 0)
+  modBy 2 (length s) == 0
 
 
 -- Anonymous functions
 
 ones: List String -> List String
 ones li =
-    filter (\s -> length s == 1) li
+  filter (\s -> length s == 1) li
 
 concat : String -> String -> String
 concat = (\a b -> a ++ b)
@@ -27,7 +27,7 @@ type Boxed = Boxed Int
 
 box : List Int -> List Boxed
 box li =
-    map Boxed li
+  map Boxed li
 
 
 -- Type tags for records are also functions
@@ -36,14 +36,14 @@ type Point = Point { x : Float, y : Float }
 
 triangle1 : List { x : Float, y : Float }
 triangle1 =
-    [ { x = 0, y = 0 }
-    , { x = 8, y = 1 }
-    , { x = 5, y = 7 }
-    ]
+  [ { x = 0, y = 0 }
+  , { x = 8, y = 1 }
+  , { x = 5, y = 7 }
+  ]
 
 triangle2 : List Point
 triangle2 =
-    map Point triangle1
+  map Point triangle1
 
 
 -- Type aliases for records act as multi-parameter functions
@@ -55,5 +55,5 @@ bob = Person "Robert" 55
 
 people : List { name : String, age : Int }
 people =
-    map2 Person ["Alice", "Brian", "Coco"] [61, 23, 35]
+  map2 Person ["Alice", "Brian", "Coco"] [61, 23, 35]
 

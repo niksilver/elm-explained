@@ -1,4 +1,4 @@
-module RecordTypes where
+module RecordTypes exposing (..)
 
 -- Record types don't have names
 

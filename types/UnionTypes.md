@@ -17,7 +17,7 @@ then we can use them like this in the REPL:
 ```
 > import UnionTypes exposing (..)
 > East
-East : UnionTypes.Direction
+East : Direction
 >
 ```
 
@@ -27,12 +27,12 @@ Here's an example of using this
 
 ```elm
 describe : Direction -> String
-describe dir
-    = case dir of
-        North -> "Cold"
-        East -> "Arid"
-        South -> "Hot"
-        West -> "Humid"
+describe dir =
+  case dir of
+    North -> "Cold"
+    East -> "Arid"
+    South -> "Hot"
+    West -> "Humid"
 ```
 
 Note that the code above won't compile if we miss out one of the directions,
@@ -48,11 +48,12 @@ the `Card` type is a mix of tagged `Value` and tagged `String` types.
 ```elm
 type Character = Ace | King | Queen | Jack
 type Value = Pips Int | Name Character
-type Card = Heart Value
-    | Diamond Value
-    | Club Value
-    | Spade Value
-    | Joker String
+type Card =
+  Heart Value
+  | Diamond Value
+  | Club Value
+  | Spade Value
+  | Joker String
 
 d10 = Diamond (Pips 10)
 hking = Heart (Name King)
@@ -64,29 +65,30 @@ Let's look at the values' types:
 ```
 > import UnionTypes exposing (..)
 > d10
-Diamond (Pips 10) : UnionTypes.Card
+Diamond (Pips 10) : Card
 > hking
-Heart (Name King) : UnionTypes.Card
+Heart (Name King) : Card
 > joker1
-Joker ("Laughing Jeremy") : UnionTypes.Card
+Joker ("Laughing Jeremy") : Card
 >
 ```
 
 ## Union types must create new tags
 
 For a union type to be valid, all the types in the union
-must be creating a new type. So we can't do (say)
+must be creating a new type. So we can't do this, for example:
 
 ```elm
 type Counter = Int | { name : String, c : Int}
 ```
 
 But we can do this if `AnonCounter` and `NamedCounter` are entirely
-new and haven't been defined already
+new and haven't been defined already:
 
 ```elm
 type Counter = AnonCounter Int | NamedCounter { name : String, c : Int }
 ```
+Both `AnonCounter` and `NamedCounter` act as tags for the types that follow.
 
 See also
 [Evan Czaplicki's discussion of union types](https://gist.github.com/evancz/06fe634245a3aab4a61b)

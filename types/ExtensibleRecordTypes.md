@@ -15,8 +15,8 @@ type alias IncXY a = { a | x : Float, y : Float }
 ```
 
 Notice that the `IncXY` type has to declare the use of type variable `a`.
-That's because the type definition effectively reads "something of type
-`a` which also has a field `x` which is a Float and a field `y` which is a
+That's because the type definition effectively reads "something with
+some type `a` plus a field `x` which is a Float and a field `y` which is a
 Float". See
 [our notes on parameterised types](ParameterisedTypes.md)
 elsewhere.
@@ -70,9 +70,10 @@ then this is what it looks like in the Elm REPL:
 ```
 > import ExtensibleRecordTypes exposing (..)
 > ixy
-{ x = 10.1, y = 11.1, z = 12.1 } : ExtensibleRecordTypes.IncXY { z : Float }
+{ x = 10.1, y = 11.1, z = 12.1 }
+    : IncXY { z : Float }
 > jxy
-{ x = 1.1, y = 2.1 } : ExtensibleRecordTypes.JustXY
+{ x = 1.1, y = 2.1 } : JustXY
 > res1
 3.2 : Float
 > res3

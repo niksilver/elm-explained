@@ -1,4 +1,4 @@
-module ParameterisedTypes where
+module ParameterisedTypes exposing (..)
 
 -- Lists are parameterised types
 

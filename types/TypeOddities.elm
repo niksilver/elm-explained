@@ -1,4 +1,4 @@
-module TypeOddities where
+module TypeOddities exposing (..)
 
 
 -- Type name different from tag name
@@ -16,3 +16,4 @@ star2 = Chico 37
 star3 : Groucho
 star3 = Harpo 38
 
+type TypeName = ConstructorName Int
