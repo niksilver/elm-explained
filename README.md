@@ -1,7 +1,7 @@
 # Elm explained
 
 Some demonstration code and commentary
-to explain various fundamental features of the Elm language.
+to explain various fundamental features of the Elm language (0.19).
 The idea is mainly just to be able to read and understand Elm code,
 not so much how to use it well.
 
