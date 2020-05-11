@@ -37,7 +37,8 @@ any further instructions. The `Cmd` is what goes up the stack, out the
 platform and (usually) back in again.
 
 When we want to send something out to JavaScript we use this exact
-mechanism. We send a `Cmd` up the stack, and Elm sends it out to JavaScript.
+mechanism. We send a `Cmd` out of the update function,
+up the stack, and Elm sends it out to JavaScript.
 To create the `Cmd` we use the `port` definition:
 
 ```elm
@@ -47,7 +48,9 @@ port sendMessage : String -> Cmd msg
 This says that `sendMessage` will take a string and turn it into the
 appropriate command, and the Elm platform will then send the string
 to JavaScript. The Elm platform provides the implementation for
-`sendMessage`; we don't need to worry about it. Then this code will
+`sendMessage`; we don't need to worry about it.
+
+So this code will
 create a command that sends the model's `draft` field to JavaScript:
 
 ```elm
@@ -71,8 +74,8 @@ by the anonymous function, in a variable called `message`.
 
 ## Incoming ports
 
-We also want to receive messages from JavaScript and send them into
-our Elm app. In our websockets example we use
+We also want to capture messages on the JavaScript side and send
+them into our Elm app. In our websockets example we use
 [this code on the JavaScript
 side](https://github.com/elm-community/js-integration-examples/blob/8291cb6a3e182ef6d8f1fc994cdee2e713d0776a/websockets/index.html#L32):
 
@@ -89,13 +92,13 @@ look at the `messageReceiver` port, and send it in".
 Now we need to pick it up on the Elm side.
 
 In these cases we use a `Sub Msg`, which is a subscription to something
-that will send a `Msg` to our `update` function. Elm ports will create
-the the subscription for us, but it needs some help. The problem
+that will send a `Msg` to our `update` function. Elm's ports will create
+the the subscription for us, but Elm needs some help. The problem
 is that the message coming in is a string, but our update function
 wants to process a `Msg`. Elm needs us to tell it how to convert
 a string into a `Msg`.
 
-We can at least define our port, though.
+We can at least define our port, though:
 
 ```elm
 port messageReceiver : (String -> msg) -> Sub msg
