@@ -123,3 +123,31 @@ True : Bool
 True : Bool
 >
 ```
+
+## Interpreting parameterised types
+
+If have a `List String` then we might describe it as "a list of strings".
+In our above example of `MiscHolder Int` we might describe it as
+"a holder of integers". But in Elm apps we often see a `view` function
+defined like this:
+
+```elm
+view : Model -> Html Msg
+```
+
+It would be tempting to describe the return type as "HTML of messages",
+but that would lead to confusion. What does "HTML of messages" mean?
+Surely HTML is just HTML, it can't be "of" anything. So how do we
+intepret `HTML Msg`?
+
+A more useful way to describe the return type is "HTML which emits messages".
+This tells us there is no standard way to describe parameterised types.
+We have to understand the intention of the type's author.
+
+To give another example, in the core `Result` package the type
+`Result error value` can be interpreted as "A result that gives an
+error of one type and a success value of another type". That is quite
+different to how we might describe `Task x a` in the core `Task`
+package, even though they are of the same format. Understanding the
+author's intent is key.
+
