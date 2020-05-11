@@ -18,7 +18,11 @@ will provide the implementation.
 That aside, `sendMessage` and `messageReceiver` are like any other Elm
 functions, and can be used in the same way.
 
-Now we will look at each kind in more detail.
+Now we will look at outgoing and incoming ports in more detail.
+We will continue using the same example, with an application that
+defines a message of type `Msg`.
+Despite this specific type, ports need to be defined with a
+parameterised `msg` (lower case first letter). That's just the way they work.
 
 ## Outgoing ports
 
