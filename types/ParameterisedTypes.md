@@ -138,7 +138,7 @@ view : Model -> Html Msg
 It would be tempting to describe the return type as "HTML of messages",
 but that would lead to confusion. What does "HTML of messages" mean?
 Surely HTML is just HTML, it can't be "of" anything. So how do we
-intepret `HTML Msg`?
+intepret `Html Msg`?
 
 A more useful way to describe the return type is "HTML which emits messages".
 This tells us there is no standard way to describe parameterised types.
